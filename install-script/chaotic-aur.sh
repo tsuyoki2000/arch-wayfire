@@ -13,9 +13,13 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.ta
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
 
 # pacman.conf に Chaotic-AUR リポジトリを追加
-sudo echo -e "" >> /etc/pacman.conf
-sudo echo -e "[chaotic-aur]" >> /etc/pacman.conf
-sudo echo -e "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
+sudo sh -c 'echo "" >> /etc/pacman.conf'
+sudo sh -c 'echo "[chaotic-aur]" >> /etc/pacman.conf'
+sudo sh -c 'echo "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf'
+
+#sudo echo -e "" >> /etc/pacman.conf
+#sudo echo -e "[chaotic-aur]" >> /etc/pacman.conf
+#sudo echo -e "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 
 # パッケージデータベースを更新
 sudo pacman -Sy
